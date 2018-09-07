@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import {NavigationActions} from 'react-navigation';
-import { Text, View, StyleSheet, ImageBackground } from 'react-native'
+import { Text, View, StyleSheet, ImageBackground,Header } from 'react-native'
 import { white } from 'ansi-colors';
 
 export default class drawerContentComponents extends React.Component {
@@ -17,20 +17,35 @@ export default class drawerContentComponents extends React.Component {
   render() {
     return (
         <View style={styles.container}>
-            <View style={styles.headerContainer}>
-            
+           
+            <View style={styles.headerContainer}> 
+                <ImageBackground source={require('../headerimg.jpg')} style={{flex: 1, width: 280,height: 80, justifyContent: 'center'}} >
+                    <Text style={styles.headerText}>Ruta 5, Honduras</Text>
+                    <Text style={styles.headerText}>You can display here logo or profile image</Text>
+                </ImageBackground>          
             </View>
             <View style={styles.screenContainer}>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('ScreenA')}>Screen A</Text>
+                    <Text onPress={this.navigateToScreen('ScreenA')}>Acerca de</Text>
                 </View>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('ScreenB')}>Screen B</Text>
+                    <Text onPress={this.navigateToScreen('ScreenB')}>Noticias</Text>
                 </View>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('ScreenC')}>Screen C</Text>
+                    <Text onPress={this.navigateToScreen('ScreenC')}>Galerias</Text>
                 </View>
+                <View style={styles.screenStyle}>
+                    <Text onPress={this.navigateToScreen('Videos')}>Videos</Text>
+                </View>
+                <View style={styles.screenStyle}>
+                    <Text onPress={this.navigateToScreen('Aliados')}>Aliados</Text>
+                </View>
+                <View style={styles.screenStyle}>
+                    <Text onPress={this.navigateToScreen('Contacto')}>Contacto</Text>
+                </View>
+                
             </View>
+            
         </View>
     
     )
@@ -39,16 +54,23 @@ export default class drawerContentComponents extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
+        paddingTop: 20, 
+        
+             
     },
     headerContainer: {
-        height: 150,
+        height: 70,
+        
+
     },
     headerText: {
         color: '#fff8f8',
+        paddingLeft: 15
     },
     screenContainer: {
-        paddingTop: 20
+        paddingTop: 20,
+        paddingLeft: 15
+
     },
     screenStyle: {
         height: 30,
@@ -59,6 +81,9 @@ const styles = StyleSheet.create({
     screenTextStyle:{
         fontSize: 20,
         marginLeft: 20
+    },
+    headerStyle:{
+        height: 220,
     },
 
 });

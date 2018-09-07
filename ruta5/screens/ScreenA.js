@@ -1,13 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, } from 'react-native';
+import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
+import { Icon } from '..expo/vector-icons';
 
 
 export default class ScreenA extends React.Component {
     render(){
         return(
-            <View style={styles.container}>
-                <Text>SCREEN A</Text>
-            </View>
+            <Container>
+                <Header>
+                <Left>
+                    <Button transparent>
+                    <Icon name='menu' />
+                    </Button>
+                </Left>
+                <Body>
+                    <Title>Acerca de Nosotros</Title>
+                </Body>
+                </Header>
+                <View style={styles.container}>
+                <Text></Text>
+                
+                </View>
+            </Container>          
         )
     }
     
