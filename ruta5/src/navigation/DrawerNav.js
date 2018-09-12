@@ -11,6 +11,7 @@ import drawerContentComponents from './drawerContentComponents';
 
 
 export const DrawerNav = createDrawerNavigator (
+    
     {
         ScreenA:{ screen: ScreenA },
         ScreenB:{ screen: ScreenB },

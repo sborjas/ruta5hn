@@ -10,6 +10,7 @@ export default class ScreenA extends React.Component {
             <Container>
                 <Header>
                 <Left>
+                    
                     <Button transparent>
                     <Icon name='menu' />
                     </Button>

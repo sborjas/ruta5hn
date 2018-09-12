@@ -5,7 +5,7 @@ import { Text, View, StyleSheet, ImageBackground,Header } from 'react-native'
 import { white } from 'ansi-colors';
 
 export default class drawerContentComponents extends React.Component {
-
+    
     navigateToScreen = ( route ) =>(
         () => {
         const navigateAction = NavigationActions.navigate({
@@ -15,6 +15,7 @@ export default class drawerContentComponents extends React.Component {
     })
 
   render() {
+    
     return (
         <View style={styles.container}>
            
