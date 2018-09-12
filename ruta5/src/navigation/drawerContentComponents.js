@@ -27,10 +27,10 @@ export default class drawerContentComponents extends React.Component {
             </View>
             <View style={styles.screenContainer}>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('ScreenA')}>Acerca de</Text>
+                    <Text onPress={this.navigateToScreen('ScreenA')}>Acerca de Nosotros</Text>
                 </View>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('ScreenB')}>Noticias</Text>
+                    <Text onPress={this.navigateToScreen('ScreenB')}>Talento Catracho</Text>
                 </View>
                 <View style={styles.screenStyle}>
                     <Text onPress={this.navigateToScreen('ScreenC')}>Galerias</Text>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import { StyleSheet, Text, WebView, ScrollView, Dimensions } from 'react-native';
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
+import HTML from 'react-native-render-html';
 
 
 export default class ScreenA extends React.Component {
@@ -11,7 +12,7 @@ export default class ScreenA extends React.Component {
                 <Header>
                 <Left>
                     
-                    <Button transparent>
+                    <Button transparent onPressOut={console.log('hola')}>
                     <Icon name='ios-menu' />
                     </Button>
                 </Left>
@@ -19,11 +20,18 @@ export default class ScreenA extends React.Component {
                     <Title>Acerca de Nosotros</Title>
                 </Body>
                 </Header>
-                <View style={styles.container}>
-                <Text></Text>
                 
-                </View>
-            </Container>          
+
+                
+                <WebView
+                    source={{uri: 'https://rutacincohn.com/about/'}}
+                    style={{marginTop: 20}}
+                />
+                
+
+            </Container>      
+            
+            
         )
     }
     
