@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, } from 'react-native';
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
-import { Icon } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 export default class Aliados extends React.Component {
     render(){
         return(
@@ -9,7 +10,7 @@ export default class Aliados extends React.Component {
                 <Header>
                 <Left>
                     <Button transparent>
-                    <Icon name='menu' />
+                    <Icon name='ios-menu' />
                     </Button>
                 </Left>
                 <Body>
@@ -28,8 +29,8 @@ export default class Aliados extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
+   
+      
       alignItems: 'center',
       justifyContent: 'center',
     },
