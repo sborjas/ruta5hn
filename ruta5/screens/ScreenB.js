@@ -14,12 +14,12 @@ export default class ScreenA extends React.Component {
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Noticias</Title>
+                    <Title>Talento Catracho</Title>
                 </Body>
                 </Header>
                 <WebView
                     source={{uri: 'https://rutacincohn.com/category/talento-catracho/'}}
-                    style={{marginTop: 20}}
+                    
                 />
             </Container>
         )

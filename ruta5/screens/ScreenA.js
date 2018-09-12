@@ -25,7 +25,7 @@ export default class ScreenA extends React.Component {
                 
                 <WebView
                     source={{uri: 'https://rutacincohn.com/about/'}}
-                    style={{marginTop: 20}}
+                    
                 />
                 
 

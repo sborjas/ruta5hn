@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import { StyleSheet, Text, WebView, } from 'react-native';
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -17,10 +17,11 @@ export default class Contacto extends React.Component {
                     <Title>Contacto</Title>
                 </Body>
                 </Header>
-                <View style={styles.container}>
-                <Text></Text>
+                <WebView
+                    source={{uri: 'https://rutacincohn.com/contacto/'}}
+                   
+                />
                 
-                </View>
             </Container>
         )
     }
