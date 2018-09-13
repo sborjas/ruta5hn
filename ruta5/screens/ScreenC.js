@@ -1,14 +1,6 @@
 import React from "react";
-import { StyleSheet, Image, FlatList, View } from "react-native";
-import {
-  Container,
-  Button,
-  Body,
-  Title,
-  Right,
-  Header,
-  Left
-} from "native-base";
+import { StyleSheet, Image, FlatList } from "react-native";
+import { Container, Button, Body, Title, Header, Left } from "native-base";
 import Icon from "react-native-vector-icons/Ionicons";
 import axios from "react-native-axios";
 
