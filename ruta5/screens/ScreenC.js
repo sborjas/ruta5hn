@@ -13,12 +13,9 @@ export default class ScreenC extends React.Component {
   }
 
   getImagesURIS = () => {
-    console.log("entro");
     var url =
       "https://public-api.wordpress.com/rest/v1.1/sites/rutacincohn.com/posts/";
-    var res = [
-      "https://posdatadesdehonduras.files.wordpress.com/2018/09/cecilia.png"
-    ];
+    var res = [];
 
     return axios.get(url).then(function(response) {
       for (const post of response.data.posts) {
@@ -27,7 +24,6 @@ export default class ScreenC extends React.Component {
           res.push(post.attachments[key]);
         }
       }
-      console.log(res);
       return res;
     });
   };
@@ -60,11 +56,13 @@ export default class ScreenC extends React.Component {
           renderItem={({ item }) => (
             <Image
               source={{ uri: item.URL }}
-              style={{ width: 400, height: 400 }}
+              style={{ width: 180, height: 180 }}
             />
           )}
           style={{ flex: 1, marginTop: 20, width: "100%" }}
           keyExtractor={(item, index) => item.ID}
+          horizontal={false}
+          numColumns={2}
         />
       </Container>
     );
