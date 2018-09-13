@@ -3,28 +3,49 @@ import { StyleSheet, Image,FlatList, View} from 'react-native';
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 import axios from 'react-native-axios'
+import { statSync } from 'fs';
 
-export function getImagesURIS() {
-    var url =
-      "https://public-api.wordpress.com/rest/v1.1/sites/rutacincohn.com/posts/";
-    var res = [];
-  
-    return axios.get(url).then(function(response) {
-      for (const post of response.data.posts) {
-        var keys = post.attachments.keys(o);
-        for (const key of keys) {
-          res.push(post.attachments[key].URL);
+export default class ScreenC extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            urls: []
         }
-      }
-      return res;
-    });
-  }
+    }
 
-export default class ScreenA extends React.Component {
+    getImagesURIS = () => {
+        console.log("entro")
+        var url =
+          "https://public-api.wordpress.com/rest/v1.1/sites/rutacincohn.com/posts/";
+        var res = ['https://posdatadesdehonduras.files.wordpress.com/2018/09/cecilia.png'];
+      
+        return axios.get(url).then(function(response) {
+          for (const post of response.data.posts) {
+            var keys = Object.keys(post.attachments);
+            for (const key of keys) {
+                res.push(post.attachments[key].URL);
+            }
+          }
+          console.log(res);
+          return res;
+        });
+      }
+
+    componentWillMount = () => {
+        // this.getImagesURIS();
+        console.log("antes")
+        // let tmp = this.getImagesURIS();
+        this.setState({
+            urls: this.getImagesURIS();
+        })
+        console.log("despues")
+        console.log(tmp);
+    }
+
     render(){
         return(
             <Container>
-                <Header>
+                <Header style={styles.headerStyle} >
                 <Left>
                     <Button transparent>
                     <Icon name='ios-menu' />
@@ -35,12 +56,11 @@ export default class ScreenA extends React.Component {
                 </Body>
                 </Header>
                 <FlatList
-                    data={this.getImagesURIS}
+                    data={this.state.urls}
                     renderItem={({ item }) => (
-                        <Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
+                        <Image source={{uri: item}}
                         style={{width: 400, height: 400}} />
                     )}
-                    keyExtractor={(item, index) => item.id}
                     style={{ flex: 1, marginTop: 20, width: "100%" }}
                 />
                 
@@ -59,4 +79,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    headerStyle: {
+        backgroundColor: '#082EAF'
+    }
   });

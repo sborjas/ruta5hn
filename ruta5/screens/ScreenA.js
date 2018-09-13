@@ -3,13 +3,14 @@ import { StyleSheet, Text, WebView, ScrollView, Dimensions } from 'react-native'
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 import HTML from 'react-native-render-html';
+import { blue } from 'ansi-colors';
 
 
 export default class ScreenA extends React.Component {
     render(){
         return(
             <Container>
-                <Header>
+                <Header style={styles.headerStyle}>
                 <Left>
                     
                     <Button transparent onPressOut={console.log('hola')}>
@@ -23,10 +24,7 @@ export default class ScreenA extends React.Component {
                 
 
                 
-                <WebView
-                    source={{uri: 'https://rutacincohn.com/about/'}}
-                    
-                />
+                <WebView source={{uri: 'https://rutacincohn.com/about/'}}/>
                 
 
             </Container>      
@@ -44,4 +42,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    headerStyle: {
+        backgroundColor: '#082EAF'
+    }
   });

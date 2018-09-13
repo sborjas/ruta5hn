@@ -7,7 +7,7 @@ export default class ScreenA extends React.Component {
     render(){
         return(
             <Container>
-                <Header>
+                <Header style={styles.headerStyle}>
                 <Left>
                     <Button transparent>
                     <Icon name='ios-menu' />
@@ -34,4 +34,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    headerStyle: {
+        backgroundColor: '#082EAF'
+    }
   });
