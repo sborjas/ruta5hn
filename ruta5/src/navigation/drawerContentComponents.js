@@ -96,9 +96,6 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingLeft: 5,
         paddingRight: 5,
-        
-
-
     },
     screenStyle: {
         height: 30,
