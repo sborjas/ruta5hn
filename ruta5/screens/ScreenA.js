@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, } from 'react-native';
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
-import { Icon } from '..expo/vector-icons';
-
 
 export default class ScreenA extends React.Component {
     render(){
