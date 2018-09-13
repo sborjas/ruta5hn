@@ -1,27 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import { StyleSheet, Text, WebView, ScrollView, Dimensions } from 'react-native';
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class Aliados extends React.Component {
+
+
+export default class rutaTuristica extends React.Component {
     render(){
         return(
             <Container>
-                <Header style={styles.headerStyle}>  
+                <Header style={styles.headerStyle}>
                 <Left>
-                    <Button transparent>
+                    
+                    <Button transparent onPressOut={console.log('hola')}>
                     <Icon name='ios-menu' />
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Aliados</Title>
+                    <Title>Ruta Turistica</Title>
                 </Body>
                 </Header>
-                <View style={styles.container}>
-                <Text></Text>
-                
-                </View>
-            </Container>
+                <WebView source={{uri: 'https://rutacincohn.com/category/sin-categoria/ruta-turistica/ruta-turistica-ruta-turistica/'}}/>
+            </Container>         
         )
     }
     
@@ -29,7 +29,7 @@ export default class Aliados extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-   
+      flex: 1,
       
       alignItems: 'center',
       justifyContent: 'center',

@@ -3,7 +3,7 @@ import { StyleSheet, Image,FlatList, View} from 'react-native';
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 import axios from 'react-native-axios'
-import { statSync } from 'fs';
+
 
 export default class ScreenC extends React.Component {
     constructor(props) {
@@ -14,7 +14,7 @@ export default class ScreenC extends React.Component {
     }
 
     getImagesURIS = () => {
-        console.log("entro")
+        console.log("entro");
         var url =
           "https://public-api.wordpress.com/rest/v1.1/sites/rutacincohn.com/posts/";
         var res = ['https://posdatadesdehonduras.files.wordpress.com/2018/09/cecilia.png'];
@@ -36,9 +36,9 @@ export default class ScreenC extends React.Component {
         console.log("antes")
         // let tmp = this.getImagesURIS();
         this.setState({
-            urls: this.getImagesURIS();
+            urls: this.getImagesURIS()
         })
-        console.log("despues")
+        console.log("despues");
         console.log(tmp);
     }
 

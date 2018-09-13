@@ -1,27 +1,34 @@
 import React from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import { StyleSheet, Text, WebView } from 'react-native';
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class Videos extends React.Component {
+
+
+export default class rutaGas extends React.Component {
     render(){
         return(
             <Container>
                 <Header style={styles.headerStyle}>
                 <Left>
+                    
                     <Button transparent>
                     <Icon name='ios-menu' />
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Videos</Title>
+                    <Title>Ruta Gastronomica</Title>
                 </Body>
                 </Header>
-                <View style={styles.container}>
-                <Text></Text>
                 
-                </View>
-            </Container>
+
+                
+                <WebView source={{uri: 'https://rutacincohn.com/category/ruta-gastronomica/'}}/>
+                
+
+            </Container>      
+            
+            
         )
     }
     
