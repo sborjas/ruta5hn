@@ -1,25 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import { StyleSheet, Text, WebView, } from 'react-native';
 import {Container, Button,Body,Title,Right,Header,Left} from 'native-base';
-import { Icon } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 export default class Contacto extends React.Component {
     render(){
         return(
             <Container>
-                <Header>
+                <Header style={styles.headerStyle}>
                 <Left>
                     <Button transparent>
-                    <Icon name='menu' />
+                    <Icon name='ios-menu' />
                     </Button>
                 </Left>
                 <Body>
                     <Title>Contacto</Title>
                 </Body>
                 </Header>
-                <View style={styles.container}>
-                <Text></Text>
+                <WebView
+                    source={{uri: 'https://rutacincohn.com/contacto/'}}
+                   
+                />
                 
-                </View>
             </Container>
         )
     }
@@ -29,8 +31,11 @@ export default class Contacto extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      
       alignItems: 'center',
       justifyContent: 'center',
     },
+    headerStyle: {
+        backgroundColor: '#082EAF'
+    }
   });
